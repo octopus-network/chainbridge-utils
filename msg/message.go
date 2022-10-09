@@ -6,6 +6,8 @@ package msg
 import (
 	"fmt"
 	"math/big"
+
+	"github.com/ethereum/go-ethereum/common"
 )
 
 type ChainId uint8
@@ -33,6 +35,7 @@ type Message struct {
 	Type         TransferType // type of bridge transfer
 	DepositNonce Nonce        // Nonce for the deposit
 	ResourceId   ResourceId
+	Depositer    common.Address
 	Payload      []interface{} // data associated with event sequence
 }
 
